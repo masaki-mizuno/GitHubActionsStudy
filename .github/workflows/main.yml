@@ -22,6 +22,9 @@ jobs:
 
       - name: テスト01 build
         run: swift build
+        
+      - name: テスト01 test
+        run: swift test
 
       - name: テスト01 終了
         run: echo "終了します。"
