@@ -1,11 +1,19 @@
-# ・先にプッシュ動きを確認する
-# ・プルリクエストは後で確認する
+# ・先にプッシュ動きを確認する。
+# ・プルリクエストは後で確認する。
 
 name: Test01
 
+# プッシュされたら実行する。
+# 特定ブランチは指定しない。
 on: [push]
 jobs:
   job01:
     runs-on: macos-latest
     steps:
-      - run: echo "これはテスト01"
+      - name: テスト01 開始
+        run: echo "開始します。"
+      - name: テスト01 build
+        run: swift build
+      - name: テスト01 test
+      - name: テスト01 終了
+        run: echo "終了します。"
