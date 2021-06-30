@@ -4,8 +4,12 @@
 name: Test01
 
 # プッシュされたら実行する。
-# 特定ブランチは指定しない。
-on: [push]
+# masterブランチのプッシュは除外
+on:
+  push:
+    branches-ignore:
+      - 'master'
+
 jobs:
   job01:
     runs-on: macos-latest
