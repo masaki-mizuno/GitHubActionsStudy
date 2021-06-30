@@ -16,7 +16,11 @@ jobs:
     steps:
       - name: テスト01 開始
         run: echo "開始します。"
+
+      - uses: actions/checkout@v2
+
       - name: テスト01 build
         run: swift build -v
+
       - name: テスト01 終了
         run: echo "終了します。"
