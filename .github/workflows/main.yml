@@ -6,9 +6,10 @@ name: Test01
 # プッシュされたら実行する。
 # masterブランチのプッシュは除外
 on:
-  push:
-    branches-ignore:
-      - 'master'
+  [push]
+#  push:
+#    branches-ignore:
+#      - 'master'
 
 jobs:
   job01:
@@ -20,7 +21,7 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: テスト01 build
-        run: swift build -v
+        run: swift build
 
       - name: テスト01 終了
         run: echo "終了します。"
