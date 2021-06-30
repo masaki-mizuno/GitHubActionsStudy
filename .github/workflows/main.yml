@@ -1,0 +1,11 @@
+# ・先にプッシュ動きを確認する
+# ・プルリクエストは後で確認する
+
+name: Test01
+
+on: [push]
+jobs:
+  job01:
+    runs-on: macos-latest
+    steps:
+      - run: echo "これはテスト01"
