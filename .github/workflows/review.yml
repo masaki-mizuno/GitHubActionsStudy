@@ -9,7 +9,6 @@ jobs:
   automerge:
     runs-on: macos-latest
     steps:
-    - uses: actions/checkout@v2
     - name: automerge
       uses: "pascalgn/automerge-action@v0.14.2"
       env:
@@ -21,5 +20,5 @@ jobs:
         MERGE_FORKS: "false"
         MERGE_RETRIES: "6"
         MERGE_RETRY_SLEEP: "10000"
-        UPDATE_LABELS: ""
+        UPDATE_LABELS: "u"
         UPDATE_METHOD: "rebase"
