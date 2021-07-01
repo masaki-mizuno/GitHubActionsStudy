@@ -5,13 +5,32 @@ name: Test01
 
 # プッシュされたら実行する。
 # masterブランチのプッシュは除外
-on:
-  [pull_request]
+#on:
+#  [pull_request]
 #  [push]
 #  push:
 #    branches-ignore:
 #      - 'master'
 #  pull_request:
+
+on:
+  pull_request:
+    types:
+      - labeled
+      - unlabeled
+      - synchronize
+      - opened
+      - edited
+      - ready_for_review
+      - reopened
+      - unlocked
+  pull_request_review:
+    types:
+      - submitted
+  check_suite:
+    types:
+      - completed
+  status: {}
 
 jobs:
   job01:
