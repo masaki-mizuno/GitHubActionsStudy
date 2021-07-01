@@ -6,10 +6,10 @@ name: Test01
 # プッシュされたら実行する。
 # masterブランチのプッシュは除外
 on:
-  [push]
-#  push:
-#    branches-ignore:
-#      - 'master'
+#  [push]
+  push:
+    branches-ignore:
+      - 'master'
 
 jobs:
   job01:
@@ -25,6 +25,11 @@ jobs:
         
       - name: テスト01 test
         run: swift test
+      
+      - name: automerge
+        uses: "pascalgn/automerge-action@v0.14.2"
+        env:
+          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
 
       - name: テスト01 終了
         run: echo "終了します。"
